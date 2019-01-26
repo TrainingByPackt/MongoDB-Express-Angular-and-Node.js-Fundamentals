@@ -1,0 +1,51 @@
+<app-title-header></app-title-header>
+<div  style="padding-bottom: 3rem!important;">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <!-- form card login -->
+      <div class="card rounded-0">
+          <h3 class="mb-0" style="text-align:center">Register  Admin User</h3>
+        <div class="card-header">
+        </div>
+        <div class="card-body">
+          <form (ngSubmit)="userForm.form.valid && onSubmit()" #userForm="ngForm" novalidate>
+            <div class="form-group">
+              <label for="fullName">Full Name</label>
+              <input type="text" class="form-control" id="fullName" [(ngModel)]="model.fullName" name="fullName"
+                #fullName="ngModel" [ngClass]="{ 'is-invalid': userForm.submitted && fullName.invalid }" required>
+              <div *ngIf="userForm.submitted && fullName.invalid" class="alert alert-danger">
+                Full Name is required
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" class="form-control" id="email" [(ngModel)]="model.email" name="email" #email="ngModel"
+                [ngClass]="{ 'is-invalid': userForm.submitted && email.invalid }" required>
+              <div *ngIf="userForm.submitted && email.invalid" class="alert alert-danger">
+                <div *ngIf="email.errors.required">Email is required</div>
+                <div *ngIf="email.errors.email">Email must be a valid email address</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Password</label>
+              <input type="password" class="form-control" id="password" [(ngModel)]="model.password" name="password"
+                #password="ngModel" [ngClass]="{ 'is-invalid': userForm.submitted && password.invalid }" required>
+              <div *ngIf="userForm.submitted && password.invalid" class="alert alert-danger">
+                <div *ngIf="password.errors.required">Password is required</div>
+                <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-success">Submit</button>
+            <!-- [disabled]="!userForm.form.valid" -->
+          </form>
+        </div>
+        <!--/card-block-->
+      </div>
+      <!-- /form card login -->
+
+    </div>
+
+
+  </div>
+</div>
