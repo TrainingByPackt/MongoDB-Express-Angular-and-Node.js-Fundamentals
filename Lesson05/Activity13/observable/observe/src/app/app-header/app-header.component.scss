@@ -1,0 +1,51 @@
+.app-header {
+    background: #e94e06;
+    height: 44px;
+    color: white;
+    padding: 6px 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+    .logo {
+      margin-right: 10px;
+      img {
+        max-height: 40px;
+      }
+    }
+    .title {
+      flex: 1;
+    }
+    .logo, .title {
+      cursor: pointer;
+    }
+    .profile-dropdown {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .initials {
+        background: #dcdcdc;
+        border-radius: 50%;
+        height: 40px;
+        line-height: 40px;
+        width: 40px;
+        text-align: center;
+        color: black;
+      }
+    }
+    .action-btns {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      .app-btn {
+        &:first-child {
+          margin-right: 10px;
+        }
+        &.logout-btn {
+          margin-left: 10px;
+          margin-right: 0;
+        }
+      }
+    }
+  }
+  

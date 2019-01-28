@@ -1,0 +1,16 @@
+<div *ngIf="user">
+    <h1 class="title-pen"> 
+        <a (click)="onBack()" class="previous">&laquo; Back</a>
+        <span>{{user[0].first}}'s</span> User Profile </h1>
+     <div class="user-profile">
+       <img class="avatar" src="{{user[0].picture}}" alt="Ash" />
+         <div class="fullname">{{user[0].first}} {{user[0].second}}</div>
+       <div class="email">
+           {{user[0].email}}
+       </div>
+         <div class="phone">
+             Tel.: {{user[0].phone}}
+       </div>
+     </div>
+
+</div>

@@ -1,0 +1,5 @@
+<h1>Honda Cars</h1>
+<div><label>Model  : </label> <strong *ngIf="hondaCarObj">{{hondaCarObj.model}}</strong></div>
+<div><label>Year  : </label> <strong *ngIf="hondaCarObj">{{hondaCarObj.year}}</strong></div>
+<input type="text" [(ngModel)]='carId'>
+<button (click)="getHondaCarsDetail()">Get Honda Car</button>
