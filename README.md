@@ -22,10 +22,6 @@ For an optimal student experience, we recommend the following hardware configura
 
 ### Software requirements
 You’ll also need the following software installed in advance:
-* **Text Editor**: Sublime Text (latest version), Atom IDE (latest version), or another similar text editor application
-* Docker (Version 17.05 or higher)
-* Git
-* GNU make
 * OS: Windows 7 SP1 64-bit, Windows 8.1 64-bit, or Windows 10 64-bit
 * Browser: Google Chrome, latest version
 * Postman | API Development Environment, latest version
