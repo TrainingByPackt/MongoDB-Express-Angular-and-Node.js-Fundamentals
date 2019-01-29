@@ -12,8 +12,11 @@ MongoDB, Express, Angular, and Node.js Fundamentals by **Paul Oluyege**
 * Understand the MEAN architecture
 * Create RESTful APIs to complete CRUD tasks
 * Build a blogging application with basic features
-* Creating simple animations using Angular
+* Describe best practices to secure node applications
+* Implement authentication and authorization
+* Create simple animations using Angular
 * Perform unit testing on Angular applications
+
 ### Hardware requirements
 For an optimal student experience, we recommend the following hardware configuration:
 * **Processor**: Intel Core i5 or equivalent
