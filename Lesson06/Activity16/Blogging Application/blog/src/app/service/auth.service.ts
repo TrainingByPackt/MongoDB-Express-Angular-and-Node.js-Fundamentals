@@ -2,24 +2,23 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { Router } from '@angular/router'
 import { map } from 'rxjs/operators';
+import { environment } from '../../environments/environment'
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-
-  registerUrl= "http://localhost:3000/auth/register";
-  loginUrl= "http://localhost:3000/auth/sign_in";
+  config = environment;
 
   constructor(private http: HttpClient,
     private router: Router) { }
 
   registerUser(user) {
-    return this.http.post<any>(`${this.registerUrl}`, user)
+    return this.http.post<any>(`${this.config.registerUrl}`, user)
   }
 
   loginUser(user) {
-    return this.http.post<any>(`${this.loginUrl}`, { 'email': user.email, 'password': user.password })
+    return this.http.post<any>(`${this.config.loginUrl}`, { 'email': user.email, 'password': user.password })
       .pipe(map(user => {
         // login successful if there's a jwt token in the response
         if (user && user.token) {

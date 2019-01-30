@@ -13,18 +13,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared/shared.module';
 
-// const appRoutes: Routes = [
-//   { path: 'blog', component: BlogHomeComponent, data: {animation: 'HomePage'}},
-//   { path: 'blog/post/:id',  component: ViewPostComponent,data: {animation: 'PostPage'}},
-//   { path: 'login',  component: LoginComponent,data: {animation: 'LoginPage'}},
-//   { path: 'register',  component: RegisterComponent,data: {animation: 'RegisterPage'}},
-//   { path: 'create',  component: CreateComponent,data: {animation: 'CreatePage'}},
-//   { path: '',
-//     redirectTo: '/blog',
-//     pathMatch: 'full'
-//   },
-//   // { path: '**', component: PageNotFoundComponent }
-// ];
 
 @NgModule({
   declarations: [
