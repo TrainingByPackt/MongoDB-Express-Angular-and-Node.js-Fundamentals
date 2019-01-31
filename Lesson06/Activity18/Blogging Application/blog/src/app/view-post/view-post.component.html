@@ -1,0 +1,44 @@
+
+    <!-- View post -->
+
+
+
+        <div  class="page-container scene-main scene-main--fade_In">
+            <!-- Blog post -->
+            <div class="container"> 
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="post_img">
+                            <img src="{{article.photo}}" alt="Card image cap">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container mb-65px">
+                <div class="row">
+                    <div class="col-lg-10 offset-lg-1 mt-10px">
+                        <div class="blog_posts stander_blog_single_post">
+                            <article>
+                                <h3 class="post_title">
+                                    <div class="post_meta_top">
+                                        <span class="post_meta_category">
+                                            <a href="#">{{article.tag}}</a>
+                                        </span>
+                                        <span class="post_meta_date">{{article.createdOn}}</span>
+                                    </div>
+                                    
+                                    <a href="#">{{article.title}}</a>
+                                </h3>
+                                
+                                <div class="post_content">
+                                    <p style=" text-align: justify; text-justify: inter-word;">{{article.body}}
+                                    </p>
+                                </div>
+                                <div class="separator-line"></div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+           
+        </div> 

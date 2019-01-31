@@ -1,0 +1,63 @@
+<app-title-header></app-title-header>
+<div style="padding-bottom: 3rem!important;">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <!-- form card login -->
+      <div class="card rounded-0">
+        <h3 style="text-align:center" class="mb-0">Create Post</h3>
+        <div class="card-header">
+        </div>
+        <div class="card-body">
+          <form (ngSubmit)="postForm.form.valid && onSubmit()" #postForm="ngForm" novalidate>
+            <div class="form-group">
+              <label for="title">Title</label>
+              <input type="text" class="form-control" id="title" [(ngModel)]="model.title" name="title" #title="ngModel"
+                [ngClass]="{ 'is-invalid': postForm.submitted && title.invalid }" required>
+              <div *ngIf="postForm.submitted && title.invalid" class="alert alert-danger">
+                Title is required
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="body">Body</label>
+              <textarea class="form-control" id="body" [(ngModel)]="model.body" name="body" #body="ngModel" [ngClass]="{ 'is-invalid': postForm.submitted && body.invalid }"
+                required></textarea>
+              <div *ngIf="postForm.submitted && body.invalid" class="alert alert-danger">
+                <div *ngIf="body.errors.required">This field is required</div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="tag">Post Tag</label>
+              <select style="height:50px" class="form-control" id="tag" required [(ngModel)]="model.tag" name="tag"
+                #tag="ngModel">
+                <option *ngFor="let tag of tags" [value]="tag">{{tag}}</option>
+              </select>
+              <div *ngIf="postForm.submitted && tag.invalid" class="alert alert-danger">
+                Tag is required
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Upload Url</label>
+              <div class="input-group">
+                <input type="text" class="form-control" id="photo" [(ngModel)]="model.photo" name="photo" #photo="ngModel"
+                  [ngClass]="{ 'is-invalid': postForm.submitted && photo.invalid }" required>
+                <div *ngIf="postForm.submitted && photo.invalid" class="alert alert-danger">
+                  <div *ngIf="photo.errors.required">This field is required</div>
+                </div>
+              </div>
+            </div>
+            <button [disabled]="loading" type="submit" class="btn btn-success">Submit</button>
+            <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+
+            <div *ngIf="success" class="alert alert-success">{{success}}</div>
+            <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</div>

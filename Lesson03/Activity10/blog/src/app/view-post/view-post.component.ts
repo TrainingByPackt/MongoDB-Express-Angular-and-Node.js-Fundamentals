@@ -11,7 +11,11 @@ import { ArticleService } from '../service/article.service';
 export class ViewPostComponent implements OnInit {
   id: any;
   article: any;
+<<<<<<< HEAD
+  constructor( private route:ActivatedRoute,private articleService: ArticleService) { }
+=======
   constructor( private route:Router,private articleService: ArticleService) { }
+>>>>>>> 8c0a98fe1daf3902bd0d351326c6815b0ca274cc
 
   ngOnInit() {
     this.route.params.subscribe(params => {

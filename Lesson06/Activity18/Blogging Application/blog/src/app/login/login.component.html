@@ -1,0 +1,57 @@
+<app-title-header></app-title-header>
+<div class="" style="padding-bottom: 3rem!important;">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <!-- form card login -->
+      <div class="card rounded-0">
+        <h3 class="mb-0" style="text-align:center" class="mb-0">Login</h3>
+        <div class="card-header">
+          <a href="#" class="btn" style="float:left;margin-right:10px;color:darkblue;border: 1px solid darkblue">
+            <i class="fa fa-facebook-official"></i>
+            Facebook
+          </a>
+          <a href="#" class="btn" style="margin-left:30px; color:red;border: 1px solid red">
+            Google
+          </a>
+
+          <a href="#" routerLink="/register" class="btn" style="float:right;margin-right:10x;color:orange;border: 1px solid orange">
+            <i class="fa fa-facebook-official"></i>
+            Register New User
+          </a>
+        </div>
+        <div class="card-body">
+          <form (ngSubmit)="submitForm()" [formGroup]="loginForm">
+            <div class="form-group">
+              <label>Email</label>
+              <input class="form-control" type="text" [ngClass]="{'is-invalid': submitted &&  loginForm.controls['email'].invalid}"
+                formControlName="email" placeholder="">
+              <div *ngIf=" submitted && loginForm.controls['email'].invalid" class="alert alert-danger">Invalid Email
+                Address</div>
+            </div>
+
+            <div class="form-group">
+              <label>Password</label>
+              <input class="form-control" type="password" [ngClass]="{'is-invalid': submitted && loginForm.controls['password'].invalid}"
+                formControlName="password" placeholder="">
+              <div *ngIf=" submitted && loginForm.controls['password'].invalid" class="alert alert-danger">Invalid
+                Passowrd</div>
+            </div>
+
+            <div class="form-group">
+              <button [disabled]="loading" type="submit" class="btn btn-primary">Login</button>
+              <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+
+            </div>
+            <div *ngIf="success" class="alert alert-success">{{success}}</div>
+            <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+          </form>
+        </div>
+        <!--/card-block-->
+      </div>
+      <!-- /form card login -->
+
+    </div>
+
+
+  </div>
+</div>

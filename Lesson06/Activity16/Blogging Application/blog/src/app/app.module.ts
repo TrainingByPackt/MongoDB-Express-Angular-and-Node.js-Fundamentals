@@ -13,6 +13,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared/shared.module';
 
+<<<<<<< HEAD
+=======
 // const appRoutes: Routes = [
 //   { path: 'blog', component: BlogHomeComponent, data: {animation: 'HomePage'}},
 //   { path: 'blog/post/:id',  component: ViewPostComponent,data: {animation: 'PostPage'}},
@@ -25,6 +27,7 @@ import { SharedModule } from './shared/shared/shared.module';
 //   },
 //   // { path: '**', component: PageNotFoundComponent }
 // ];
+>>>>>>> 8c0a98fe1daf3902bd0d351326c6815b0ca274cc
 
 @NgModule({
   declarations: [

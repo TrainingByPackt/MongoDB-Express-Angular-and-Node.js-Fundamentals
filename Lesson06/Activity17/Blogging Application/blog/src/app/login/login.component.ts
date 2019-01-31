@@ -6,6 +6,10 @@ import { first } from 'rxjs/operators';
 
 
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 8c0a98fe1daf3902bd0d351326c6815b0ca274cc
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -20,7 +24,11 @@ export class LoginComponent {
   loading = false;
   success = '';
 
+<<<<<<< HEAD
+  constructor(private formBuilder: FormBuilder, private authService: AuthService,
+=======
   constructor(private formBuilder: FormBuilder, private auth: AuthService,
+>>>>>>> 8c0a98fe1daf3902bd0d351326c6815b0ca274cc
     private router: Router) {
     /* Declare Reactive Form Group here */
     this.loginForm = this.formBuilder.group({
@@ -33,7 +41,10 @@ export class LoginComponent {
         Validators.required
       ]],
     });
+<<<<<<< HEAD
+=======
 
+>>>>>>> 8c0a98fe1daf3902bd0d351326c6815b0ca274cc
   }
 
   submitForm() {
@@ -48,7 +59,12 @@ export class LoginComponent {
     }
 
     // this.loading = true;
+<<<<<<< HEAD
+    
+    this.authService.loginUser(user)
+=======
     this.auth.loginUser(user)
+>>>>>>> 8c0a98fe1daf3902bd0d351326c6815b0ca274cc
       .pipe(first())
       .subscribe(
         data => {
