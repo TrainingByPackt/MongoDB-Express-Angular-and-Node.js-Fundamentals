@@ -1,0 +1,9 @@
+<div class="app-content">
+  <div class="user-profile" *ngIf="isLoggedIn">
+    Hi {{user.firstName}} {{user.lastName}}! Welcome to MEANStack class
+  </div>
+  <div class="action-btn">
+    <button class="app-btn" *ngIf="!isLoggedIn" (click)="login()">Login</button>
+    <button class="app-btn" *ngIf="isLoggedIn" (click)="logout()">Logout</button>
+  </div>
+</div>

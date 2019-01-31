@@ -1,0 +1,15 @@
+<div class="app-header">
+  <div class="title" routerLink="/">Packt MEANStack Courseware</div>
+  <div class="profile-dropdown" *ngIf="isLoggedIn">
+    <div class="initials">
+      {{user.firstName.charAt(0)}}{{user.lastName.charAt(0)}}
+    </div>
+  </div>
+  <div class="action-btns" *ngIf="!isLoggedIn">
+    <button class="app-btn login-btn" (click)="login()">Login</button>
+    <button class="app-btn signup-btn" (click)="signup()">Signup</button>
+  </div>
+  <div class="action-btns" *ngIf="isLoggedIn">
+    <button class="app-btn logout-btn" (click)="logout()">Logout</button>
+  </div>
+</div>
