@@ -46,9 +46,9 @@ export class EditComponent implements OnInit {
       .pipe(first())
       .subscribe(
         data => {
+          this.loading = false;
           this.success = 'Article successfully Updated';
           setTimeout(this.navigateToBlogHome.bind(this), 2000);
-
         },
         error => {
           this.error = error;

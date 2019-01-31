@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule,CanActivate } from '@angular/router';
 import { SharedModule } from './shared/shared/shared.module'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-
+import { AuthGuardService as AuthGuard } from './service/auth-guard.service';
 const routes: Routes = [
   {
     path: 'blog',
@@ -17,7 +16,8 @@ const routes: Routes = [
   },
   {
     path: 'blog/edit/:id',
-    loadChildren: './edit/edit.module#EditModule'
+    loadChildren: './edit/edit.module#EditModule',
+    canActivate: [AuthGuard]
   },
   {
     path: 'login',
@@ -25,11 +25,12 @@ const routes: Routes = [
   },
   {
     path: 'register',
-    loadChildren: './register/register.module#RegisterModule'
+    loadChildren: './register/register.module#RegisterModule',
   },
   {
     path: 'create',
-    loadChildren: './create/create.module#CreateModule'
+    loadChildren: './create/create.module#CreateModule',
+    canActivate: [AuthGuard]
   },
   {
     path: '', redirectTo: 'blog', pathMatch: 'full'

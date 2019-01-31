@@ -28,6 +28,7 @@ export class RegisterComponent implements OnInit {
       .pipe(first())
       .subscribe(
         data => {
+          this.loading = false;
           this.success = 'Registration successful';
           setTimeout(this.navigateToLogin.bind(this), 2000);
         },

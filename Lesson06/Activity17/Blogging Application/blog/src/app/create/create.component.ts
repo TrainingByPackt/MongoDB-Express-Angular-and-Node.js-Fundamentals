@@ -31,12 +31,13 @@ export class CreateComponent implements OnInit {
       .pipe(first())
       .subscribe(
         data => {
+          this.loading = false;
           this.success = 'Article successfully Posted';
           setTimeout(this.navigateToBlogHome.bind(this), 2000);
 
         },
         error => {
-          this.error = error;
+          this.error = error.message;
           this.loading = false;
         });
   }

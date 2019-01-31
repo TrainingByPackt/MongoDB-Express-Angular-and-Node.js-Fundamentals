@@ -9,10 +9,16 @@ import { environment } from '../../environments/environment'
 export class ArticleService {
   config = environment;
   article: any;
-  token = 'JWT ' + localStorage.getItem('currentUser');
-  httpOptions = new HttpHeaders({ 'Content-Type': 'application/json; charset=utf-8', 'Authorization': this.token });
+  token = JSON.parse( localStorage.getItem('currentUser') ) ;
+  httpOptions:any;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+    this.httpOptions = new HttpHeaders({  
+      'Authorization': this.token,
+      'Access-Control-Allow-Origin':'*',
+      'Access-Control-Allow-Methods':'PUT, POST, GET, DELETE, OPTIONS',
+     });
+  }
 
   getArticles(): Observable<Post> {
     this.article = this.http.get<Post>(`${this.config.articlesUrl}`);
@@ -26,7 +32,6 @@ export class ArticleService {
 
   /** POST: add a new article to the database */
   PostArticle(article: Post): Observable<Post> {
-  
     return this.http.post<Post>(`${this.config.articlesUrl}`,
       { 'title': article.title, 'body': article.body, 'tag': article.tag, 'photo': article.photo }, {
         headers: this.httpOptions
@@ -35,12 +40,13 @@ export class ArticleService {
 
   deleteArticle(id: number):
     Observable<{}> {
-    return this.http.delete(`${this.config.articleUrl}` + id)
+    return this.http.delete(`${this.config.articleUrl}` + id, {
+      headers: this.httpOptions
+    })
   }
 
   updateArticle(id: number, article: Post): Observable<Post> {
-    // let token = 'JWT ' + localStorage.getItem('currentUser');
-    // const httpOptions = new HttpHeaders({ 'Content-Type': 'application/json; charset=utf-8', 'Authorization': token });
+    console.log(this.token)
     return this.http.put<Post>(`${this.config.articleUrl}` + id, { 'title': article.title, 'body': article.body, 'tag': article.tag, 'photo': article.photo },{
       headers: this.httpOptions
     })

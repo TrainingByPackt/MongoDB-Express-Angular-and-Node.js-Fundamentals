@@ -1,15 +1,26 @@
-`javascript`
-const mongoose = require("mongoose");
-// var MongoClient = require('mongodb').MongoClient;
+/*Its assumed that you have already created a mongodb atlas cluster 
+in previous exercise, Therefore, use the cluster credentials 
+(username and password for mongodb atlas cluster) for this exercise */
 
-var uri = "mongodb+srv://paulappz:asdfasdf@cluster0-0wi3e.mongodb.net/test?retryWrites=true";
+//install mongodb using 'npm install mongoose'
+
+// Load mongoose module 
+const mongoose = require("mongoose");
+mongoose.set('useCreateIndex', true);
+
+// Declare a variable named uri and assign MongoDB connection string
+var uri = "mongodb+srv://<username>:<password> @cluster0-0wi3e.mongodb.net/test?retryWrites=true";
+
+// Declare a variable named option and assign optional settings
 
   const options = {
     reconnectTries: Number.MAX_VALUE,
-    poolSize: 10
+    poolSize: 10,
+    useNewUrlParser:true
   };
 
-  mongoose.connect(uri, options).then(
+// Connect MongoDB Atlas using mongoose connect method
+mongoose.connect(uri, options).then(
     () => {
       console.log("Database connection established!");
     },
@@ -18,23 +29,3 @@ var uri = "mongodb+srv://paulappz:asdfasdf@cluster0-0wi3e.mongodb.net/test?retry
     }
   );
 
-//   MongoClient.connect(uri, options)
-// .then((db) => {
-//   //const collection = client.db('test');
-//   // Insert some documents
-//   // console.log('client is a typeof: ', typeof client + '\n')
-//   accountsDb = db;
-//   collection = accountsDb.db('test');
-//  console.log('Successfully connected to MongoDB');
-// })
-
-// .catch((err) => {
-//   console.log(err);
-// });
-
-
-
-
-// require any models
-
-require("../api/models/Article");

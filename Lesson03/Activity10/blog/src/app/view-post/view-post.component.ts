@@ -11,7 +11,7 @@ import { ArticleService } from '../service/article.service';
 export class ViewPostComponent implements OnInit {
   id: any;
   article: any;
-  constructor( private route:Router,private articleService: ArticleService) { }
+  constructor( private route:ActivatedRoute,private articleService: ArticleService) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
