@@ -7,14 +7,21 @@
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
+<<<<<<< HEAD
     "express-session": "^1.15.6",
+=======
+>>>>>>> 8c0a98fe1daf3902bd0d351326c6815b0ca274cc
     "jsonwebtoken": "^8.3.0",
     "mongoose": "^5.3.2",
     "morgan": "^1.9.1",
     "passport": "^0.4.0",
     "passport-facebook": "^2.1.1",
+<<<<<<< HEAD
     "passport-local": "^1.0.0",
     "passport-twitter": "^1.0.4"
+=======
+    "passport-local": "^1.0.0"
+>>>>>>> 8c0a98fe1daf3902bd0d351326c6815b0ca274cc
   },
   "devDependencies": {},
   "scripts": {

@@ -5,7 +5,14 @@
 
 export const environment = {
   production: false,
+<<<<<<< HEAD
  
+=======
+  articlesUrl: 'http://localhost:3000/articles',
+  articleUrl: 'http://localhost:3000/article/',
+  registerUrl: "http://localhost:3000/auth/register",
+  loginUrl: "http://localhost:3000/auth/sign_in"
+>>>>>>> 8c0a98fe1daf3902bd0d351326c6815b0ca274cc
 };
 
 /*

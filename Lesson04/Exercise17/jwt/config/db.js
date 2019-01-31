@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*Its assumed that you have already created a mongodb atlas cluster 
 in previous exercise, Therefore, use the cluster credentials 
 (username and password for mongodb atlas cluster) for this exercise */
@@ -21,6 +22,19 @@ var uri = "mongodb+srv://paulappz:asdfasdf@cluster0-0wi3e.mongodb.net/test?retry
 
 // Connect MongoDB Atlas using mongoose connect method
 mongoose.connect(uri, options).then(
+=======
+`javascript`
+const mongoose = require("mongoose");
+
+var uri = "mongodb+srv://paulappz:asdfasdf@cluster0-0wi3e.mongodb.net/test?retryWrites=true";
+
+  const options = {
+    reconnectTries: Number.MAX_VALUE,
+    poolSize: 10
+  };
+
+  mongoose.connect(uri, options).then(
+>>>>>>> 8c0a98fe1daf3902bd0d351326c6815b0ca274cc
     () => {
       console.log("Database connection established!");
     },
@@ -28,3 +42,10 @@ mongoose.connect(uri, options).then(
       console.log("Error connecting Database instance due to: ", err);
     }
   );
+<<<<<<< HEAD
+=======
+
+// require any models
+
+require("../api/models/userModel");
+>>>>>>> 8c0a98fe1daf3902bd0d351326c6815b0ca274cc

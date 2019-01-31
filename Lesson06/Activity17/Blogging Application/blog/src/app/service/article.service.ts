@@ -9,6 +9,7 @@ import { environment } from '../../environments/environment'
 export class ArticleService {
   config = environment;
   article: any;
+<<<<<<< HEAD
   token = JSON.parse( localStorage.getItem('currentUser') ) ;
   httpOptions:any;
 
@@ -19,6 +20,12 @@ export class ArticleService {
       'Access-Control-Allow-Methods':'PUT, POST, GET, DELETE, OPTIONS',
      });
   }
+=======
+  token = 'JWT ' + localStorage.getItem('currentUser');
+  httpOptions = new HttpHeaders({ 'Content-Type': 'application/json; charset=utf-8', 'Authorization': this.token });
+
+  constructor(private http: HttpClient) { }
+>>>>>>> 8c0a98fe1daf3902bd0d351326c6815b0ca274cc
 
   getArticles(): Observable<Post> {
     this.article = this.http.get<Post>(`${this.config.articlesUrl}`);
@@ -32,6 +39,10 @@ export class ArticleService {
 
   /** POST: add a new article to the database */
   PostArticle(article: Post): Observable<Post> {
+<<<<<<< HEAD
+=======
+  
+>>>>>>> 8c0a98fe1daf3902bd0d351326c6815b0ca274cc
     return this.http.post<Post>(`${this.config.articlesUrl}`,
       { 'title': article.title, 'body': article.body, 'tag': article.tag, 'photo': article.photo }, {
         headers: this.httpOptions
@@ -40,6 +51,7 @@ export class ArticleService {
 
   deleteArticle(id: number):
     Observable<{}> {
+<<<<<<< HEAD
     return this.http.delete(`${this.config.articleUrl}` + id, {
       headers: this.httpOptions
     })
@@ -47,6 +59,14 @@ export class ArticleService {
 
   updateArticle(id: number, article: Post): Observable<Post> {
     console.log(this.token)
+=======
+    return this.http.delete(`${this.config.articleUrl}` + id)
+  }
+
+  updateArticle(id: number, article: Post): Observable<Post> {
+    // let token = 'JWT ' + localStorage.getItem('currentUser');
+    // const httpOptions = new HttpHeaders({ 'Content-Type': 'application/json; charset=utf-8', 'Authorization': token });
+>>>>>>> 8c0a98fe1daf3902bd0d351326c6815b0ca274cc
     return this.http.put<Post>(`${this.config.articleUrl}` + id, { 'title': article.title, 'body': article.body, 'tag': article.tag, 'photo': article.photo },{
       headers: this.httpOptions
     })

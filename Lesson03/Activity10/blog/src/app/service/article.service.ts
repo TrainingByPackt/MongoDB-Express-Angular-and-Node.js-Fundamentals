@@ -20,6 +20,20 @@ export class ArticleService {
 
   constructor(private http: HttpClient) { }
 
+<<<<<<< HEAD
+=======
+  //   getArticles() {
+  //     if (this.article ) {
+  //       console.log(this.article);
+  //       return of(this.article);
+  //     } else {
+  //       this.article = this.http.get(this.articlesUrl);
+  //     return this.article;
+  //   }
+  // }
+
+
+>>>>>>> 8c0a98fe1daf3902bd0d351326c6815b0ca274cc
   getArticles():Observable<Post> {
     this.article = this.http.get<Post>(this.articlesUrl);
     return this.article;
@@ -30,6 +44,13 @@ export class ArticleService {
     return this.http.get(this.articleUrl + id);
   }
 
+<<<<<<< HEAD
+=======
+  // getAllContacts(): Observable<Post[]> {
+  //   return this.http.get<Post[]>(this.articlesUrl);
+  // }
+
+>>>>>>> 8c0a98fe1daf3902bd0d351326c6815b0ca274cc
   PostArticle(article: Post):Observable<Post> {
     return this.http.post<Post>(this.articlesUrl, article);
   }

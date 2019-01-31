@@ -6,6 +6,7 @@ require("./config/db");
 
 const app = express();
 
+<<<<<<< HEAD
 const port = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -23,6 +24,12 @@ app.use(function(req, res, next) {
   }
 });
 
+=======
+const port = process.env.PORT || 4000;
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+>>>>>>> 8c0a98fe1daf3902bd0d351326c6815b0ca274cc
 // API ENDPOINTS
 var routes = require('./api/routes/articleListRoutes'); //importing route
 routes(app); 

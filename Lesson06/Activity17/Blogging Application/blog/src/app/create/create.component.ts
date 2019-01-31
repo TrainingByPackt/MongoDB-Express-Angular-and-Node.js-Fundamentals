@@ -31,13 +31,20 @@ export class CreateComponent implements OnInit {
       .pipe(first())
       .subscribe(
         data => {
+<<<<<<< HEAD
           this.loading = false;
+=======
+>>>>>>> 8c0a98fe1daf3902bd0d351326c6815b0ca274cc
           this.success = 'Article successfully Posted';
           setTimeout(this.navigateToBlogHome.bind(this), 2000);
 
         },
         error => {
+<<<<<<< HEAD
           this.error = error.message;
+=======
+          this.error = error;
+>>>>>>> 8c0a98fe1daf3902bd0d351326c6815b0ca274cc
           this.loading = false;
         });
   }
