@@ -12,9 +12,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared/shared.module';
-import { AuthGuardService } from './service/auth-guard.service';
 
-
+<<<<<<< HEAD
+=======
 // const appRoutes: Routes = [
 //   { path: 'blog', component: BlogHomeComponent, data: {animation: 'HomePage'}},
 //   { path: 'blog/post/:id',  component: ViewPostComponent,data: {animation: 'PostPage'}},
@@ -27,6 +27,7 @@ import { AuthGuardService } from './service/auth-guard.service';
 //   },
 //   // { path: '**', component: PageNotFoundComponent }
 // ];
+>>>>>>> 8c0a98fe1daf3902bd0d351326c6815b0ca274cc
 
 @NgModule({
   declarations: [
@@ -44,7 +45,7 @@ import { AuthGuardService } from './service/auth-guard.service';
     AppRoutingModule,
     SharedModule
   ],
-  providers: [ArticleService, AuthService,AuthGuardService],
+  providers: [ArticleService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
