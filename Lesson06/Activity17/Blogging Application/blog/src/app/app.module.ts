@@ -12,11 +12,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared/shared.module';
-<<<<<<< HEAD
 import { AuthGuardService } from './service/auth-guard.service';
 
-=======
->>>>>>> 8c0a98fe1daf3902bd0d351326c6815b0ca274cc
 
 // const appRoutes: Routes = [
 //   { path: 'blog', component: BlogHomeComponent, data: {animation: 'HomePage'}},
@@ -47,11 +44,7 @@ import { AuthGuardService } from './service/auth-guard.service';
     AppRoutingModule,
     SharedModule
   ],
-<<<<<<< HEAD
   providers: [ArticleService, AuthService,AuthGuardService],
-=======
-  providers: [ArticleService, AuthService],
->>>>>>> 8c0a98fe1daf3902bd0d351326c6815b0ca274cc
   bootstrap: [AppComponent]
 })
 export class AppModule { }
