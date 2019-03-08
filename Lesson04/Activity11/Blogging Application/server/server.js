@@ -13,7 +13,6 @@ const port = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-<<<<<<< HEAD
 //CORS (Cross-Origin Resource Sharing) headers to support Cross-site HTTP requests
 app.use(function(req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
@@ -27,8 +26,6 @@ app.use(function(req, res, next) {
     }
   });
 
-=======
->>>>>>> 8c0a98fe1daf3902bd0d351326c6815b0ca274cc
 app.use((req, res, next) => {
     if (req.headers && req.headers.authorization && req.headers.authorization.split(' ')[0] === 'JWT') {
         jsonwebtoken.verify(req.headers.authorization.split(' ')[1],  'RESTfulAPIs', (err, decode) => {

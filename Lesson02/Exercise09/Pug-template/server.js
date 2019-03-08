@@ -10,12 +10,9 @@ var todoData = [
 ];
 
 //set view engine
-app.set("view engine","pug")
-
+app.set("view engine","pug");
 app.get('/', function (req, res) {
 res.render('index', { TodoList: todoData });
-
-
 });
 
 var server = app.listen(8000, function () {

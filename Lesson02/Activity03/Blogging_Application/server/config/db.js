@@ -30,9 +30,6 @@ mongoose.connect(uri, options).then(
   );
 
 
-
-
-
 // require any models
 
 require("../api/models/Article");
